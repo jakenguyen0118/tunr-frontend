@@ -7,9 +7,9 @@ const loaded = () => (
     <div>
       {songs.map((song) => (
         <article>
-          <p>{song.name}</p>
-          <p>{song.name}</p>
-          <p>{song.age}</p>
+          <p>{song.title}</p>
+          <p>{song.artist}</p>
+          <p>{song.time}</p>
           <button onClick={() => {
             props.deleteSong(song)
           }}>X</button>
