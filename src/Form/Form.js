@@ -16,7 +16,7 @@ const Form = (props) => {
 
     return(
         <div className='form'>
-            <h3>ADD A NEW SONG</h3>
+            <h3>ADD SONG TO PLAYLIST</h3>
             <form onSubmit={handleSubmit}>
                 <p>TITLE</p>
                 <input
@@ -40,7 +40,7 @@ const Form = (props) => {
                     onChange={handleChange}
                 />
                 <br />
-                <input type="submit" value='Add Song'/>
+                <input type="submit" value='Add Song' className='submit-button'/>
             </form>
         </div>
     )
