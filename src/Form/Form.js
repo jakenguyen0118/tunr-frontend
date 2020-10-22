@@ -17,25 +17,29 @@ const Form = (props) => {
         <div>
             <h2>ADD A NEW SONG</h2>
             <form onSubmit={handleSubmit}>
+                <h4>TITLE</h4>
                 <input
                     type='text'
                     name='title'
-                    value={formData.title}
+                    // value={formData.title}
                     onChange={handleChange}
                 />
+                <h4>ARTIST</h4>
                 <input
                     type='text'
                     name='artist'
-                    value={formData.artist}
+                    // value={formData.artist}
                     onChange={handleChange}
                 />
+                <h4>TIME</h4>
                 <input
                     type='text'
                     name='time'
-                    value={formData.time}
+                    // value={formData.time}
                     onChange={handleChange}
                 />
-                <input type="submit" value={props.label}/>
+                <br />
+                <input type="submit" />
             </form>
         </div>
     )
