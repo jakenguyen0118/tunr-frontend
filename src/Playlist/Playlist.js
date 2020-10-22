@@ -1,6 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import { faHeartbeat } from '@fortawesome/free-solid-svg-icons'
 import './playlist.scss'
 
 const Playlist = (props) => {
@@ -16,7 +16,7 @@ const loaded = () => (
           <button onClick={() => {
             props.deleteSong(song)
           }}>X</button>
-          <FontAwesomeIcon icon={faHeart} onClick={() => props.addToFaves(song)}/>
+          <FontAwesomeIcon icon={faHeartbeat} onClick={() => props.addToFaves(song)}/>
         </article>
       ))}
     </div>
