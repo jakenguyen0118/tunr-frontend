@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+h3 {
+    font-size: 2rem;
+    font-family: 'Lato', sans-serif;
+    color: #FF6978;
+}
+
+article {
+    display: flex;
+    justify-content: space-between;
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+
+    p {
+        font-family: 'Lato', sans-serif;
+        font-size: 24px;
+    }
+
+    button {
+        border-style: none;
+        background-color: white;
+        color: red;
+        width: 60px;
+        height: 60px;
+    }
+
+    .time {
+        color: lightskyblue;
+    }
+}

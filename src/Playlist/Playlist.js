@@ -8,11 +8,12 @@ const Playlist = (props) => {
 
 	const loaded = () => (
 		<div>
+      <h3>Playlist</h3>
 			{songs.map((song) => (
 				<article>
 					<p>{song.title}</p>
 					<p>{song.artist}</p>
-					<p>{song.time}</p>
+					<p className='time'>{song.time}</p>
 					<button
 						onClick={() => {
 							props.deleteSong(song)
