@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 
 const Favorites = (props) => {
     
-    return(<h1>Favorite Songs List</h1>)
+    return(<h3>Favorite Songs List</h3>)
 }
 
 export default Favorites
