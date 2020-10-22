@@ -1,7 +1,7 @@
-import React from 'react'; 
+import React, {useState} from 'react'; 
 
-const From = (props) => {
-    const [formData, setFormData] = React.useState();
+const Form = (props) => {
+    const [formData, setFormData] = useState();
 
     const handleSubmit = (event)=>{
         event.preventDefault();
@@ -20,7 +20,7 @@ const From = (props) => {
                 <input
                     type='text'
                     name='title'
-                    value={formData.tilte}
+                    value={formData.title}
                     onChange={handleChange}
                 />
                 <input
