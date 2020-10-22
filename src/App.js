@@ -10,6 +10,12 @@ function App() {
 
   const [songs, setSongs] = useState([])
 
+  const emptySong = {
+    title: '',
+    artist: '',
+    time: ''
+  }
+
   const getSongs = () => {
     fetch(url)
       .then(res => res.json())
@@ -22,19 +28,31 @@ function App() {
     getSongs()
   }, [])
 
+ 	const handleAddSong = (newSong) => {
+		fetch(url, {
+			method: 'post',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(newSong) 
+    })
+    .then((response) => getSongs()); 
+	};
+
   return (
-    <div className="App">
-      <Header />
-      <Switch>
-        <Route 
-          exact
-          path='/'
-          render={(routerProps) => <Playlist {...routerProps} songs={songs}/> }
-        />
-      </Switch>
-      <Form />
-    </div>
-  );
+		<div className='App'>
+			<Header />
+			
+				<Route
+					exact
+					path='/'
+					render={(routerProps) => <Playlist {...routerProps} songs={songs} />}
+				/>
+		
+			<Form handleSubmit={handleAddSong} song={emptySong}/>
+
+		</div>
+	);
 }
 
 export default App;
