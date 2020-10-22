@@ -1,9 +1,10 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faHeartbeat} from '@fortawesome/free-solid-svg-icons';
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import './playlist.scss'
 
 const Playlist = (props) => {
-    const {songs} = props
+	const { songs } = props
 
 const loaded = () => (
     <div>
@@ -15,13 +16,13 @@ const loaded = () => (
           <button onClick={() => {
             props.deleteSong(song)
           }}>X</button>
-          <FontAwesomeIcon icon={faHeartbeat} onClick={() => props.addToFaves(song)}/>
+          <FontAwesomeIcon icon={faHeart} onClick={() => props.addToFaves(song)}/>
         </article>
       ))}
     </div>
   );
 
-  return songs.length > 0 ? loaded() : <h1>Loading...</h1>
-};
+	return songs.length > 0 ? loaded() : <h1>Loading...</h1>
+}
 
-export default Playlist;
+export default Playlist
