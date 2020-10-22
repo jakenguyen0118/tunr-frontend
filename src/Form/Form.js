@@ -1,4 +1,5 @@
-import React, {useState} from 'react'; 
+import React, {useState} from 'react';
+import './form.scss'
 
 const Form = (props) => {
     const [formData, setFormData] = useState();
@@ -14,24 +15,24 @@ const Form = (props) => {
     };
 
     return(
-        <div>
-            <h2>ADD A NEW SONG</h2>
+        <div className='form'>
+            <h3>ADD A NEW SONG</h3>
             <form onSubmit={handleSubmit}>
-                <h4>TITLE</h4>
+                <p>TITLE</p>
                 <input
                     type='text'
                     name='title'
                     // value={formData.title}
                     onChange={handleChange}
                 />
-                <h4>ARTIST</h4>
+                <p>ARTIST</p>
                 <input
                     type='text'
                     name='artist'
                     // value={formData.artist}
                     onChange={handleChange}
                 />
-                <h4>TIME</h4>
+                <p>TIME</p>
                 <input
                     type='text'
                     name='time'
