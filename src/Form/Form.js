@@ -39,7 +39,7 @@ const Form = (props) => {
                     onChange={handleChange}
                 />
                 <br />
-                <input type="submit" />
+                <input type="submit" value='Add Song'/>
             </form>
         </div>
     )
