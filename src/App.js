@@ -39,18 +39,25 @@ function App() {
     .then((response) => getSongs()); 
 	};
 
+const deleteSong = (song) => {
+	fetch(url + '/' + song._id, {
+		method: 'delete',
+	}).then((response) => getSongs());
+};
+
   return (
 		<div className='App'>
 			<Header />
-			
-				<Route
-					exact
-					path='/'
-					render={(routerProps) => <Playlist {...routerProps} songs={songs} />}
-				/>
-		
-			<Form handleSubmit={handleAddSong} song={emptySong}/>
 
+			<Route
+				exact
+				path='/'
+				render={(routerProps) => (
+					<Playlist {...routerProps} songs={songs} deleteSong={deleteSong}/>
+				)}
+			/>
+
+			<Form handleSubmit={handleAddSong} song={emptySong} />
 		</div>
 	);
 }
