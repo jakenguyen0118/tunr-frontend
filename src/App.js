@@ -72,7 +72,7 @@ const deleteSong = (song) => {
 				)}
 			/>
 
-			{/* <Favorites /> */}
+			<Favorites />
 
 			<Form handleSubmit={handleAddSong} song={emptySong} />
 		</div>
