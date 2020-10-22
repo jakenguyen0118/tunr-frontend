@@ -6,24 +6,21 @@ import './playlist.scss'
 const Playlist = (props) => {
 	const { songs } = props
 
-	const loaded = () => (
-		<div>
-			{songs.map((song) => (
-				<article key={song._id}>
-					<p>{song.title}</p>
-					<p>{song.artist}</p>
-					<p>{song.time}</p>
-					<button
-						onClick={() => {
-							props.deleteSong(song)
-						}}>
-						X
-					</button>
-					<FontAwesomeIcon icon={faHeart} />
-				</article>
-			))}
-		</div>
-	)
+const loaded = () => (
+    <div>
+      {songs.map((song) => (
+        <article>
+          <p>{song.title}</p>
+          <p>{song.artist}</p>
+          <p>{song.time}</p>
+          <button onClick={() => {
+            props.deleteSong(song)
+          }}>X</button>
+          <FontAwesomeIcon icon={faHeart} onClick={() => props.addToFaves(song)}/>
+        </article>
+      ))}
+    </div>
+  );
 
 	return songs.length > 0 ? loaded() : <h1>Loading...</h1>
 }
