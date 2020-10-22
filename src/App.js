@@ -4,11 +4,14 @@ import './App.scss';
 import Header from './Header/Header'
 import Form from './Form/Form'
 import Playlist from './Playlist/Playlist'
+import Favorites from './Favorites/Favorites';
 
 function App() {
   const url = 'https://jaltunr.herokuapp.com'
 
   const [songs, setSongs] = useState([])
+
+  const [faves, setFaves] = useState([])
 
   const emptySong = {
     title: '',
@@ -27,6 +30,13 @@ function App() {
   useEffect(() => {
     getSongs()
   }, [])
+
+  const addToFaves = (song) => {
+    const favesArray = [...faves]
+    favesArray.push(song)
+    console.log(`adding ${song.title} to favesArray`)
+    setFaves(favesArray)
+  }
 
  	const handleAddSong = (newSong) => {
 		fetch(url, {
@@ -53,9 +63,16 @@ const deleteSong = (song) => {
 				exact
 				path='/'
 				render={(routerProps) => (
-					<Playlist {...routerProps} songs={songs} deleteSong={deleteSong}/>
+					<Playlist
+						{...routerProps}
+						songs={songs}
+						deleteSong={deleteSong}
+						addToFaves={addToFaves}
+					/>
 				)}
 			/>
+
+			{/* <Favorites /> */}
 
 			<Form handleSubmit={handleAddSong} song={emptySong} />
 		</div>
