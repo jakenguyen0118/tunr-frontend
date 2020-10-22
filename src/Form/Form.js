@@ -7,7 +7,7 @@ const Form = (props) => {
     const handleSubmit = (event)=>{
         event.preventDefault();
         props.handleSubmit(formData);
-        props.history.push('/')//this can be change base on route, but this should ne the display page route
+        // props.history.push('/')//this can be change base on route, but this should ne the display page route
     };
 
     const handleChange = (event) => {
