@@ -31,10 +31,10 @@ function App() {
         <Route 
           exact
           path='/'
-          render={(routerProps) => <Playlist {...routerProps} songs={songs}/>}
+          render={(routerProps) => <Playlist {...routerProps} songs={songs}/> }
         />
       </Switch>
-      {/* <Form /> */}
+      <Form />
     </div>
   );
 }
