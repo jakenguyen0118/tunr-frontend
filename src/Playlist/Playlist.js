@@ -15,7 +15,7 @@ const loaded = () => (
           <button onClick={() => {
             props.deleteSong(song)
           }}>X</button>
-          <FontAwesomeIcon icon={faHeartbeat}/>
+          <FontAwesomeIcon icon={faHeartbeat} onClick={() => props.addToFaves(song)}/>
         </article>
       ))}
     </div>
